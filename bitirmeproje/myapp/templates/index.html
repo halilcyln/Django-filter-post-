@@ -1,0 +1,125 @@
+{% extends 'base/base.html' %}
+
+
+{% block body %}
+  <!-- Header carousel -->
+  <div class="d-flex mt-4" style="justify-content: center;">
+    <div id="carouselExampleCaptions" class="carousel slide w-75" data-mdb-ride="carousel">
+      <div class="carousel-indicators">
+        
+       
+      </div>
+
+      <!-- bu alan admin panelinden gelecek random image gönderilecek -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" style="height: 350px;" class="d-block w-100"
+            alt="Wild Landscape" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>İzle Keşfet Ekle</h5>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- bu alan admin panelinden gelecek random image gönderilecek -->
+
+   
+    </div>
+  </div>
+  <!-- Header carousel -->
+  <!-- Header carousel En popüler -->
+  <div class="d-flex w-100" style="flex-direction: column; align-items:center;">
+
+    <!-- Popüler random -->
+    <div class="w-75 mb-4 mt-4 p-4" style="background-color: aliceblue;">
+      <h2 style="color: rgb(179, 181, 183)">Popüler</h2>
+      <div class="d-flex flex-wrap">
+  
+          {% for i in cards_random %}
+          <div class="card m-2" style="width: 150px; border-radius: 8px;">
+              <img src="{{ i.image.url }}" style="border-radius: 5px; height: 100px;" class="card-img-top"
+                  alt="Fissure in Sandstone" />
+              <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                  <h5 class="card-title">{{ i.title }}</h5>
+                  <h5 class="card-title">{{ i.brand }}</h5>
+                  <a href="{% url 'detailPage' slug=i.slug category=i.category %}" class="btn btn-primary mt-auto">Detay</a>
+              </div>
+          </div>
+          {% endfor %}
+  
+      </div>
+  </div>
+  
+    
+    <!-- Popüler random -->
+
+    <!-- Telefon -->
+    <div class="w-75 mb-4 mt-4 p-4" style="background-color: aliceblue;">
+      <h2 style="color: rgb(179, 181, 183)">Film</h2>
+      <div class="d-flex flex-wrap">
+  
+          {% for i in cards_tel %}
+          <div class="card m-2" style="width: 150px; border-radius: 8px;">
+              <img src="{{ i.image.url }}" style="border-radius: 5px; height: 100px;" class="card-img-top"
+                  alt="Fissure in Sandstone" />
+              <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                  <h5 class="card-title">{{ i.title }}</h5>
+                  <h5 class="card-title">{{ i.brand }}</h5>
+                  <a href="{% url 'detailPage' slug=i.slug category=i.category %}" class="btn btn-primary mt-auto">Detay</a>
+              </div>
+          </div>
+          {% endfor %}
+  
+      </div>
+  </div>
+    
+    <!-- Telefon -->
+
+    <!-- Bilgisayar -->
+    <div class="w-75 mb-4 mt-4 p-4" style="background-color: aliceblue;">
+      <h2 style="color: rgb(179, 181, 183)">Dizi</h2>
+      <div class="d-flex flex-wrap">
+  
+          {% for i in cards_pc %}
+          <div class="card m-2" style="width: 150px; border-radius: 8px;">
+              <img src="{{ i.image.url }}" style="border-radius: 5px; height: 100px;" class="card-img-top"
+                  alt="Fissure in Sandstone" />
+              <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                  <h5 class="card-title">{{ i.title }}</h5>
+                  <h5 class="card-title">{{ i.brand }}</h5>
+                  <a href="{% url 'detailPage' slug=i.slug category=i.category %}" class="btn btn-primary mt-auto">Detay</a>
+              </div>
+          </div>
+          {% endfor %}
+  
+      </div>
+  </div>
+    <!-- Bilgisayar -->
+    
+    <!-- Tablet -->
+    <div class="w-75 mb-4 mt-4 p-4" style="background-color: aliceblue;">
+      <h2 style="color: rgb(179, 181, 183)">Belgesel</h2>
+      <div class="d-flex flex-wrap">
+  
+          {% for i in cards_tablet %}
+          <div class="card m-2" style="width: 150px; border-radius: 8px;">
+              <img src="{{ i.image.url }}" style="border-radius: 5px; height: 100px;" class="card-img-top"
+                  alt="Fissure in Sandstone" />
+              <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                  <h5 class="card-title">{{ i.title }}</h5>
+                  <h5 class="card-title">{{ i.brand }}</h5>
+                  <a href="{% url 'detailPage' slug=i.slug category=i.category %}" class="btn btn-primary mt-auto">Detay</a>
+              </div>
+          </div>
+          {% endfor %}
+  
+      </div>
+  </div>
+  
+    
+    <!-- Tablet -->
+  </div>
+{% endblock body %}
+  
+

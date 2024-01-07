@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+
+
+{% block body %}
+ 
+
+<div class="w-75 mb-4 mt-4 p-4" style="background-color: aliceblue;">
+  <h2 style="color: rgb(179, 181, 183)">Popüler</h2>
+  <div class="d-flex flex-wrap">
+
+      {% for i in filter %}
+      <div class="card m-2" style="width: 150px; border-radius: 8px;">
+          <img src="{{ i.image.url }}" style="border-radius: 5px; height: 100px;" class="card-img-top"
+              alt="Fissure in Sandstone" />
+          <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+              <h5 class="card-title">{{ i.title }}</h5>
+              <h5 class="card-title">{{ i.brand }}</h5>
+              <a href="{% url 'detailPage' slug=i.slug category=i.category %}" class="btn btn-primary mt-auto">Detay</a>
+          </div>
+      </div>
+      {% endfor %}
+
+  </div>
+</div>
+
+        
+{% endblock body %}
+    

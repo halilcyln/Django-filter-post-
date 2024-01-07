@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+
+
+{% block body %}
+    
+<div class="card-container d-flex flex-wrap">
+  {% for favori_kart in user_filter %}
+    {% if favori_kart.user == current_user %}
+      <div class="card m-2" style="width: 150px; border-radius: 8px;">
+        <img src="{{ favori_kart.product.image.url }}" style="border-radius: 5px; height: 100px;" class="card-img-top" alt="Fissure in Sandstone" />
+        <div class="card-body" style="height: 150px;">
+          <h5 class="card-title">{{ favori_kart.product.title }}</h5>
+          <h5 class="card-title">{{ favori_kart.product.brand }}</h5>
+          <a href="{% url 'detailPage' slug=favori_kart.product.slug category=favori_kart.product.category %}" class="btn btn-primary">Detay</a>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+{% endblock body %}
+    

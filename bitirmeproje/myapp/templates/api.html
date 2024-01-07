@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Data</title>
+</head>
+<body>
+    <h1>Currency Exchange Rates</h1>
+    <ul>
+        {% for currency, rate in api_data.result.items %}
+            <li>{{ currency }}: {{ rate }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
